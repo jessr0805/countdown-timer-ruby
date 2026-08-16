@@ -1,3 +1,4 @@
+puts "Time's up!"
 puts "===================="
 puts "     Ruby Timer     "
 puts "===================="
@@ -16,15 +17,15 @@ template_mini_database = {
 }
 puts "How many seconds would you like to set the timer for?"
 seconds = gets.chomp.to_i
-sleep(1)
-countdown = seconds.downto(0)
-countdown.each do |number, index|
+countdown = seconds.downto(1)
+countdown.each do |number|
   time_left = number
   time_done = seconds - time_left
   percentage_time_left = ((time_left.to_f/seconds.to_f) * 100).round(2)
   percentage_time_done = ((time_done.to_f/seconds.to_f) * 100).round(2)
   visual_time = percentage_time_left.round(-1)
-  puts "#{number} #{template_mini_database[visual_time]} #{percentage_time_left} %"
+  print "\r Timer: #{template_mini_database[visual_time]} #{percentage_time_left} % | #{number} s"
   sleep(1) 
 end
-puts "Time's up!"
+sleep(1)
+print "\rTime's up!"
