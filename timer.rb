@@ -28,4 +28,4 @@ countdown.each do |number|
   sleep(1) 
 end
 sleep(1)
-print "\rTime's up!"
+print "\rTime's up!\e[K"
