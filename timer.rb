@@ -1,4 +1,3 @@
-puts "Time's up!"
 puts "===================="
 puts "     Ruby Timer     "
 puts "===================="
@@ -17,6 +16,10 @@ template_mini_database = {
 }
 puts "How many seconds would you like to set the timer for?"
 seconds = gets.chomp.to_i
+until seconds >= 1
+    puts "Please enter a value greater than or equal to 1 second."
+    seconds = gets.chomp.to_i
+end
 countdown = seconds.downto(1)
 countdown.each do |number|
   time_left = number
